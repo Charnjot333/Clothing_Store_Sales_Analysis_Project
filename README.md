@@ -32,8 +32,7 @@ git clone https://github.com/yourusername/clothing_store_sales_analysis.git
 ## Dashboard
 
 Sales insights like top products, customer data, and revenue trends are shown using Tableau.
-<img src="https://github.com/Charnjot333/Clothing_Store_Sales_Analysis_Project/issues/1#issue-3093675742" alt="Home Page" width="500"/>
-
+![Dashboard](https://user-images.githubusercontent.com/143440107/275857720-e2d0c4cc-b07f-4062-b49f-b0b220a295de.png)
 
 
 ## Author
