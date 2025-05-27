@@ -1,0 +1,77 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    body {
+        background: url('https://cdn.pixabay.com/photo/2016/11/22/19/08/hangers-1850082_1280.jpg') no-repeat center center fixed; /* Replace with your image path */
+        background-size: cover;
+    }
+    .dashboard-container {
+        padding: 50px;
+    }
+    .dashboard-title {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #ffffff; /* White title for better contrast */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    .glass-card {
+        background: rgba(0, 123, 255, 0.3); /* Blue tint background */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        color: #f8f9fa; /* Light text color for better readability */
+        text-align: center;
+        height: 200px; /* Fixed height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .glass-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #ffffff; /* White heading color */
+    }
+    .glass-card p {
+        font-size: 1rem;
+        color: #e9ecef; /* Light grey text */
+    }
+    .glass-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 40px rgba(0, 123, 255, 0.5);
+    }
+    a {
+        text-decoration: none;
+    }
+</style>
+
+<div class="dashboard-container">
+    <div class="dashboard-title">Clothing Store Dashboard</div>
+    <div class="row justify-content-center g-4">
+        <div class="col-md-4">
+            <a href="/customers">
+                <div class="glass-card">
+                    <h3>👥 Manage Customers</h3>
+                    <p>Add, view, or update customer records.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="/orders">
+                <div class="glass-card">
+                    <h3>🛒 Manage Orders</h3>
+                    <p>Create and view orders for customers.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

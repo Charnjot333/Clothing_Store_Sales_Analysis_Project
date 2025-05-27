@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Edit Customer</h2>
+    <form method="POST">
+        <div class="row mb-2">
+            <div class="col"><input type="text" name="name" class="form-control" value="{{ customer[1] }}" required></div>
+            <div class="col"><input type="number" name="age" class="form-control" value="{{ customer[2] }}" required></div>
+            <div class="col">
+                <select name="gender" class="form-select" required>
+                    <option value="Male" {% if customer[3] == 'Male' %}selected{% endif %}>Male</option>
+                    <option value="Female" {% if customer[3] == 'Female' %}selected{% endif %}>Female</option>
+                    <option value="Other" {% if customer[3] == 'Other' %}selected{% endif %}>Other</option>
+                </select>
+            </div>
+            <div class="col"><input type="text" name="location" class="form-control" value="{{ customer[4] }}" required></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Customer</button>
+        <a href="{{ url_for('customers') }}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

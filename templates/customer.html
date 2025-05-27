@@ -1,0 +1,79 @@
+{% extends "index.html" %}
+
+{% block title %}All Customers{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h3 class="mb-4">Customer Records</h3>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  
+    <h4>Add New Customer</h4>
+<form method="POST" action="/customers" class="row g-3 mb-4">
+    <div class="col-md-2"><input type="text" name="name" class="form-control" placeholder="Name" required></div>
+    <div class="col-md-1"><input type="number" name="age" class="form-control" placeholder="Age" required></div>
+    <div class="col-md-2">
+        <select name="gender" class="form-select" required>
+            <option disabled selected>Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+    </div>
+    <div class="col-md-2"><input type="text" name="location" class="form-control" placeholder="Location" required></div>
+    <div class="col-md-3"><input type="email" name="email" class="form-control" placeholder="Email" required></div>
+    <div class="col-md-2"><button type="submit" class="btn btn-success">Add Customer</button></div>
+</form>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="table-success">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Location</th>
+                    <th>Email</th>
+                    <!-- <th>Category</th>
+                    <th>Product</th>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Purchase Date</th> -->
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cust in customers %}
+                <tr>
+                    <td>{{ cust[0] }}</td>
+                    <td>{{ cust[1] }}</td>
+                    <td>{{ cust[2] }}</td>
+                    <td>{{ cust[3] }}</td>
+                    <td>{{ cust[4] }}</td>
+                    <td>{{ cust[5] }}</td>
+                    <!-- <td>{{ cust[6] }}</td>
+                    <td>{{ cust[7] }}</td>
+                    <td>{{ cust[8] }}</td>
+                    <td>{{ cust[9] }}</td> -->
+                    <td>
+                        <a href="{{ url_for('edit_customer', email=cust[5]) }}" class="btn btn-warning btn-sm">Edit</a>
+
+                        <a href="{{ url_for('delete_customer', email=cust[5]) }}" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?');">Delete</a>
+
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
