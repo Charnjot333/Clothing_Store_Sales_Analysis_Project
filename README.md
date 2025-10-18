@@ -20,7 +20,7 @@ This is a full-stack web application for managing clothing store customers and o
 ## How to Run
 
 1. Clone the repository:
-git clone https://github.com/yourusername/clothing_store_sales_analysis.git
+git clone https://github.com/Charnjot333/clothing_store_sales_analysis.git
 
 2. Install Python dependencies: pip install -r requirements.txt
 3. Set up your MySQL database and update the connection details in the project.
