@@ -27,6 +27,7 @@ git clone https://github.com/Charnjot333/Clothing_Store_Sales_Analysis.git
 
 4. Run the Flask app: python app.py
 5. Open in browser:
+6. ![image alt](https://github.com/Charnjot333/Clothing_Store_Sales_Analysis_Project/blob/a64d50cb93a88fac0dd976422a00cc9e4055ffcb/Screenshot%202025-10-18%20162709.png)
 
 
 ## Dashboard
